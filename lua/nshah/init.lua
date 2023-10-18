@@ -1,9 +1,6 @@
 require("nshah.set")
 require("nshah.remap")
-
--- DO NOT INCLUDE THIS
---vim.opt.rtp:append("~/personal/streamer-tools")
--- DO NOT INCLUDE THIS
+require("nshah.packer")
 
 local augroup = vim.api.nvim_create_augroup
 local nshahGroup = augroup('nshah', {})
