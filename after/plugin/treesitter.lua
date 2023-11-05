@@ -1,6 +1,6 @@
 require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "vimdoc", "javascript", "typescript", "c", "lua", "rust", "markdown", "markdown_inline"},
+  ensure_installed = { "vimdoc", "javascript", "typescript", "c", "lua", "rust", "markdown", "markdown_inline", "yaml", "json", "jsdoc"},
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -8,6 +8,10 @@ require 'nvim-treesitter.configs'.setup {
   -- Automatically install missing parsers when entering buffer
   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
   auto_install = true,
+
+  context_commentstring = {
+    enable = true,
+  },
 
   highlight = {
     -- `false` will disable the whole extension
