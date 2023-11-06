@@ -21,7 +21,8 @@ return require('packer').startup(function(use)
       vim.cmd('colorscheme rose-pine')
     end
   })
-  ]]--
+  ]]
+     --
 
   use { "catppuccin/nvim", as = "catppuccin" }
 
@@ -110,8 +111,12 @@ return require('packer').startup(function(use)
   use "Djancyp/better-comments.nvim"
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    config = function()
+      require("lualine").setup()
+    end
   }
+
   -- Greeter
   use {
     'goolord/alpha-nvim',
