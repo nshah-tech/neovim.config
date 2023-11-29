@@ -100,13 +100,6 @@ return require('packer').startup(function(use)
     },
     config = function() require 'nvim-tree'.setup {} end
   }
-  --[[use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional
-    },
-  }]]
-  --
   -- Better Comments JS
   use "Djancyp/better-comments.nvim"
   use {
