@@ -1,4 +1,4 @@
-vim.opt.guicursor = { 'a:ver25', 'a:blinkon200' }
+vim.opt.guicursor = { 'a:ver100', 'a:blinkon200' }
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -28,3 +28,4 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "0"
+vim.opt.foldcolumn = "1"

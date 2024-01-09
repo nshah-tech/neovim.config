@@ -7,11 +7,13 @@ lsp.ensure_installed({
     'rust_analyzer',
     'eslint',
     'lua_ls',
+    'prettierd',
     -- 'angularls',
-    "biome",
+    -- "biome",
     "marksman",
     "yamlls",
     "jsonls",
+    "gopls",
 })
 
 -- Fix Undefined global 'vim'

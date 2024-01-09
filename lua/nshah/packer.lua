@@ -13,28 +13,13 @@ return require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
-  --[[
-  use({
-    'rose-pine/neovim',
-    as = 'rose-pine',
-    config = function()
-      vim.cmd('colorscheme rose-pine')
-    end
-  })
-  ]]
-     --
-
   use { "catppuccin/nvim", as = "catppuccin" }
 
   use({
     "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require("trouble").setup {
-        icons = false,
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
+      require("trouble").setup()
     end
   })
 
@@ -47,7 +32,6 @@ return require('packer').startup(function(use)
       local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
       ts_update()
     end, }
-  use("nvim-treesitter/playground")
   use("theprimeagen/harpoon")
   use("theprimeagen/refactoring.nvim")
   use("theprimeagen/vim-be-good")
@@ -84,8 +68,7 @@ return require('packer').startup(function(use)
   }
 
   use("folke/zen-mode.nvim")
-  -- use("github/copilot.vim")
-  -- use("eandrju/cellular-automaton.nvim")
+  use("github/copilot.vim")
   use("laytan/cloak.nvim")
   use('mhartington/formatter.nvim')
 
@@ -131,5 +114,43 @@ return require('packer').startup(function(use)
   -- use 'MunifTanjim/prettier.nvim'
 
   use("christoomey/vim-tmux-navigator")
+
+  -- 'numToStr/Comment.nvim', is an Alternative
   use("terrortylor/nvim-comment")
+
+  -- Which-Key displays a popup with possible key bindings of the command you started typing
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      require("which-key").setup()
+    end
+  }
+  -- Auto pair creates a ")" when you type "("
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+
+  -- Folding code structure
+  use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
+
+  --   use {
+  --     "lukas-reineke/indent-blankline.nvim",
+  --     config = function()
+  --       local highlight = {
+  --         "CursorColumn",
+  --         "Whitespace",
+  --       }
+  --       require("ibl").setup {
+  --         -- indent = { highlight = highlight, char = "" },
+  --         -- whitespace = {
+  --         --   highlight = highlight,
+  --         --   remove_blankline_trail = false,
+  --         -- },
+  --         -- scope = { enabled = false },
+  --       }
+  --     end
+  --   }
 end)
