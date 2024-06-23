@@ -75,7 +75,7 @@ M.general = {
 }
 
 M.tabufline = {
-  plugin = true,
+  plugin = false, --true,
 
   n = {
     -- cycle through buffers
@@ -108,7 +108,7 @@ M.comment = {
 
   -- toggle comment in both modes
   n = {
-    ["<leader>/"] = {
+    ["<C>/"] = {
       function()
         require("Comment.api").toggle.linewise.current()
       end,
@@ -117,7 +117,7 @@ M.comment = {
   },
 
   v = {
-    ["<leader>/"] = {
+    ["<C>/"] = {
       "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
       "Toggle comment",
     },
@@ -270,7 +270,7 @@ M.telescope = {
 
   n = {
     -- find
-    ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "Find files" },
+    ["<C>p"] = { "<cmd> Telescope find_files <CR>", "Find files" },
     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find all" },
     ["<leader>fw"] = { "<cmd> Telescope live_grep <CR>", "Live grep" },
     ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "Find buffers" },
