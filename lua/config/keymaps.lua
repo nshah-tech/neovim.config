@@ -18,10 +18,10 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("n", "<leader>vwm", function()
-	require("vim-with-me").StartVimWithMe()
+  require("vim-with-me").StartVimWithMe()
 end)
 vim.keymap.set("n", "<leader>svwm", function()
-	require("vim-with-me").StopVimWithMe()
+  require("vim-with-me").StopVimWithMe()
 end)
 
 -- greatest remap ever
@@ -52,7 +52,7 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/nsh
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 vim.keymap.set("n", "<leader><leader>", function()
-	vim.cmd("so")
+  vim.cmd("so")
 end)
 
 
@@ -61,6 +61,10 @@ vim.keymap.set("n", "<A-j>", ":m +1<CR>==")
 vim.keymap.set("n", "<A-k>", ":m -2<CR>==")
 -- vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv==gv")
 -- vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv==gv")
+
+vim.keymap.set("n", "<leader>fs", ":ToggleTerm direction=horizontal <CR>", { desc = "Open horizontal terminal split" })
+vim.keymap.set("n", "<leader>fv", ":ToggleTerm direction=vertical <CR>", { desc = "Open vertical terminal split" })
+
 
 -- Set up automatic spell checking
 vim.opt.spelllang = 'en'

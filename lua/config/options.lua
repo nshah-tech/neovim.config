@@ -33,3 +33,5 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "0"
 vim.opt.foldcolumn = "1"
+
+vim.g.autoformat = false
