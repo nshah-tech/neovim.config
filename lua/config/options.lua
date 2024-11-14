@@ -35,3 +35,4 @@ vim.opt.colorcolumn = "0"
 vim.opt.foldcolumn = "1"
 
 vim.g.autoformat = false
+vim.g.lazyvim_prettier_needs_config = true
