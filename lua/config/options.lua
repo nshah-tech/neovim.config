@@ -36,3 +36,6 @@ vim.opt.foldcolumn = "1"
 
 vim.g.autoformat = false
 vim.g.lazyvim_prettier_needs_config = true
+
+-- Disable Animation
+vim.g.snacks_animate = false
