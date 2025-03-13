@@ -69,3 +69,7 @@ vim.keymap.set("n", "<leader>fv", ":ToggleTerm direction=vertical <CR>", { desc 
 -- Set up automatic spell checking
 vim.opt.spelllang = 'en'
 vim.opt.spell = true
+
+-- Go if err
+vim.keymap.set("n", "<leader>rr", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>", { desc = "Go Lang if err != nil" })
+

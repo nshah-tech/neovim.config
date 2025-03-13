@@ -39,3 +39,6 @@ vim.g.lazyvim_prettier_needs_config = true
 
 -- Disable Animation
 vim.g.snacks_animate = false
+
+-- 80 columns Bar
+-- vim.opt.colorcolumn = "100"
