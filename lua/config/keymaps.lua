@@ -73,3 +73,8 @@ vim.opt.spell = true
 -- Go if err
 vim.keymap.set("n", "<leader>rr", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>", { desc = "Go Lang if err != nil" })
 
+
+-- Console log on @l register
+local esc = vim.api.nvim_replace_termcodes("<Esc>", true, true, true)
+vim.fn.setreg("l", "yoconsole.log('".. esc .."pa :" .. esc .. "la, ".. esc .. "pl")
+
