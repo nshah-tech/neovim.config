@@ -78,3 +78,4 @@ vim.keymap.set("n", "<leader>rr", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>", 
 local esc = vim.api.nvim_replace_termcodes("<Esc>", true, true, true)
 vim.fn.setreg("l", "yoconsole.log('".. esc .."pa :" .. esc .. "la, ".. esc .. "pl")
 
+-- TELESCOPE TO QUICKFIX LIST is <C-q>
