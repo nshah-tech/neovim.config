@@ -17,6 +17,7 @@ function M.pick(kind)
 end
 
 return {
+  -- Uncomment this block to enable Supermaven
   {
     "supermaven-inc/supermaven-nvim",
     config = function()
@@ -57,13 +58,6 @@ return {
       })
     end,
   },
-  -- {
-  --   "L3MON4D3/LuaSnip",
-  --   keys = {
-  --     { "<tab>", false, mode = { "i", "s" } },
-  --     { "<s-tab>", false, mode = { "i", "s" } },
-  --   },
-  -- },
   {
     "hrsh7th/nvim-cmp",
     keys = {
@@ -71,20 +65,22 @@ return {
       { "<s-tab>", false, mode = { "i", "s" } },
     },
   },
-  -- {
-  -- -- User Lazy Extra
-  --   "zbirenbaum/copilot.lua",
-  --   cmd = "Copilot",
-  --   build = ":Copilot auth",
-  --   opts = {
-  --     suggestion = { enabled = false },
-  --     panel = { enabled = false },
-  --     filetypes = {
-  --       markdown = true,
-  --       help = true,
-  --     },
-  --   },
-  -- },
+  -- Uncomment this block to enable Copilot
+  {
+    -- User Lazy Extra
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    build = ":Copilot auth",
+    opts = {
+      suggestion = { enabled = false },
+      panel = { enabled = true },
+      filetypes = {
+        markdown = true,
+        help = true,
+      },
+    },
+  },
+
   {
     "CopilotC-Nvim/CopilotChat.nvim",
     branch = "canary",
@@ -93,7 +89,7 @@ return {
       local user = vim.env.USER or "User"
       user = user:sub(1, 1):upper() .. user:sub(2)
       return {
-        model = "gpt-4",
+        model = "gpt-4o",
         auto_insert_mode = true,
         show_help = true,
         question_header = "  " .. user .. " ",
