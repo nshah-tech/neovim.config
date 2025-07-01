@@ -140,6 +140,7 @@ return {
         "query",
         "regex",
         "tsx",
+        "jsx",
         "typescript",
         "vim",
         "yaml",
@@ -156,7 +157,9 @@ return {
       -- add tsx and treesitter
       vim.list_extend(opts.ensure_installed, {
         "tsx",
+        "jsx",
         "typescript",
+        "javascript",
       })
     end,
   },
