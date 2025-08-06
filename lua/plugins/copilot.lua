@@ -66,24 +66,24 @@ return {
     },
   },
   -- Uncomment this block to enable Copilot
-  {
-    -- User Lazy Extra
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    build = ":Copilot auth",
-    opts = {
-      suggestion = { enabled = false },
-      panel = { enabled = true },
-      filetypes = {
-        markdown = true,
-        help = true,
-      },
-    },
-  },
+  -- {
+  --   -- User Lazy Extra
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   build = ":Copilot auth",
+  --   opts = {
+  --     suggestion = { enabled = false },
+  --     panel = { enabled = true },
+  --     filetypes = {
+  --       markdown = true,
+  --       help = true,
+  --     },
+  --   },
+  -- },
 
   {
     "CopilotC-Nvim/CopilotChat.nvim",
-    branch = "canary",
+    branch = "main",
     cmd = "CopilotChat",
     opts = function()
       local user = vim.env.USER or "User"
@@ -91,7 +91,7 @@ return {
       return {
         model = "gpt-4o",
         auto_insert_mode = true,
-        show_help = true,
+        -- show_help = true,
         question_header = "  " .. user .. " ",
         answer_header = "  Copilot ",
         window = {
@@ -125,10 +125,13 @@ return {
       {
         "<leader>iq",
         function()
-          local input = vim.fn.input("Quick Chat: ")
-          if input ~= "" then
-            require("CopilotChat").ask(input)
-          end
+          vim.ui.input({
+            prompt = "Quick Chat: ",
+          }, function(input)
+            if input ~= "" then
+              require("CopilotChat").ask(input)
+            end
+          end)
         end,
         desc = "Quick Chat (CopilotChat)",
         mode = { "n", "v" },
@@ -136,7 +139,15 @@ return {
       -- Show help actions with telescope
       { "<leader>id", M.pick("help"), desc = "Diagnostic Help (CopilotChat)", mode = { "n", "v" } },
       -- Show prompts actions with telescope
-      { "<leader>ip", M.pick("prompt"), desc = "Prompt Actions (CopilotChat)", mode = { "n", "v" } },
+      -- { "<leader>ip", M.pick("prompt"), desc = "Prompt Actions (CopilotChat)", mode = { "n", "v" } },
+      {
+        "<leader>ip",
+        function()
+          require("CopilotChat").select_prompt()
+        end,
+        desc = "Prompt Actions (CopilotChat)",
+        mode = { "n", "v" },
+      },
     },
     config = function(_, opts)
       local chat = require("CopilotChat")
