@@ -63,6 +63,7 @@ return {
   -- },
 
   -- add pyright to lspconfig
+  --
   {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
@@ -76,12 +77,13 @@ return {
   },
 
   -- add tsserver and setup with typescript.nvim instead of lspconfig
+  -- Plugin `williamboman/mason.nvim` was renamed to `mason-org/mason.nvim`.
   {
     "neovim/nvim-lspconfig",
     dependencies = {
       "jose-elias-alvarez/typescript.nvim",
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
+      "mason-org/mason.nvim",
+      "mason-org/mason-lspconfig.nvim",
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
@@ -192,7 +194,7 @@ return {
 
   -- add any tools you want to have installed below
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
         "lua_ls",
